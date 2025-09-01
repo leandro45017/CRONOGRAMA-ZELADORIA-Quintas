@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Cronograma Cíclico</title>
 
+  <!-- Manifest PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#21a498">
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
   :root { --prim:#21a498; }
@@ -501,10 +505,16 @@ async function limparTodosChecks(){
   }
 }
 
-
+/* ======= REGISTRO DO SERVICE WORKER ======= */
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js")
+    .then(()=>console.log("Service Worker registrado com sucesso"))
+    .catch(err=>console.error("Erro ao registrar Service Worker:", err));
+}
 
 
 </script>
 </body>
 </html>
+
 
