@@ -1,6 +1,6 @@
 {
-  "name": "Cronograma Cíclico",
-  "short_name": "Cronograma",
+  "name": "Cronograma ASG Quintas do Lago - Praia dos Coqueiros",
+  "short_name": "ASG Quintas",
   "start_url": "/CRONOGRAMA-ZELADORIA-Quintas/",
   "display": "standalone",
   "background_color": "#f5f7f7",
@@ -19,6 +19,7 @@
     }
   ]
 }
+
 
 
 
