@@ -1,7 +1,7 @@
 const CACHE_NAME = "cronograma-v1";
 const FILES_TO_CACHE = [
   "./index.html",
-  "./manifest.json"
+  "./Manifest.json"
 ];
 
 // Instala o service worker
@@ -34,6 +34,7 @@ self.addEventListener("fetch", event => {
     })
   );
 });
+
 
 
 
