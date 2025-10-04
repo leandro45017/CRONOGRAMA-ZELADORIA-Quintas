@@ -52,7 +52,7 @@
           <option>Vitor</option>
           <option>Bih</option>
           <option>Bia</option>
-          <option>Matheus</option>
+          <option>Ilderlânia</option>
         </select>
       </div>
       <div>
@@ -124,15 +124,15 @@ const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const sb = window.supabase.createClient(supabaseUrl, supabaseKey);
 
 /* ======= CONFIGURAÇÃO APP ======= */
-const FUNCIONARIOS = ["Vitor","Bih","Bia","Jô"];
+const FUNCIONARIOS = ["Vitor","Bih","Bia","Ilderlânia"];
 const DIAS = ["Segunda","Terça","Quarta","Quinta","Sexta"];
 
 /* Rotação de vidraçarias */
 const VIDRACARIAS = {
-  1:{ "Clube/Portaria":["Bih","Bia"], "Prainha":["Matheus","Vitor"] },
-  2:{ "Clube/Portaria":["Matheus","Vitor"], "Prainha":["Bih","Bia"] },
-  3:{ "Clube/Portaria":["Bih","Bia"], "Prainha":["Matheus","Vitor"] },
-  4:{ "Clube/Portaria":["Matheus","Vitor"], "Prainha":["Bih","Bia"] }
+  1:{ "Clube/Portaria":["Bih","Ilderlânia"], "Prainha":["Bia","Vitor"] },
+  2:{ "Clube/Portaria":["Bia","Vitor"], "Prainha":["Bih","Ilderlânia"] },
+  3:{ "Clube/Portaria":["Bih","Ilderlânia"], "Prainha":["Bia","Vitor"] },
+  4:{ "Clube/Portaria":["Bia","Vitor"], "Prainha":["Bih","Ilderlânia"] }
 };
 
 /* Tarefas fixas por semana */
@@ -140,38 +140,38 @@ const FIXAS = {
   1: [
     {tarefa:"Deck Gourmet + P.N.E", responsavel:"Bih"},
     {tarefa:"Brinquedoteca", responsavel:"Bia"},
-    {tarefa:"Salão de Festas", responsavel:"Matheus"},
+    {tarefa:"Salão de Festas", responsavel:"Ilderlânia"},
     {tarefa:"Banheiro M + P.N.E Clube", responsavel:"Vitor"},
     {tarefa:"Banheiro F + P.N.E Clube", responsavel:"Vitor"},
     {tarefa:"Salão de Jogos", responsavel:"Bia"},
     {tarefa:"Academia", responsavel:"Bia"},
-    {tarefa:"Portaria Delivery + Depósitos + Totens", responsavel:"Matheus"},
+    {tarefa:"Portaria Delivery + Depósitos + Totens", responsavel:"Ilderlânia"},
     {tarefa:"Administração + Copa", responsavel:"Bih"},
     {tarefa:"Banheiro Feminino", responsavel:"Vitor"},
     {tarefa:"Banheiro Masculino + P.N.E", responsavel:"Vitor"},
     {tarefa:"Portaria + Pear + Sauna + Cajueiro", responsavel:"Bia"},
     {tarefa:"Churrasqueira 1 + Quadra de Tênis", responsavel:"Bih"},
     {tarefa:"Churrasqueira 2 + Quadra Poliesportiva", responsavel:"Bia"},
-    {tarefa:"Espaço Zen + Rua Acalmada", responsavel:"Matheus"},
-    {tarefa:"Praça Área Esportiva (Playground, Academia ao Ar Livre, etc)", responsavel:"Matheus"},
+    {tarefa:"Espaço Zen + Rua Acalmada", responsavel:"Ilderlânia"},
+    {tarefa:"Praça Área Esportiva (Playground, Academia ao Ar Livre, etc)", responsavel:"Ilderlânia"},
     {tarefa:"Mirante Completo - Escada + Vidros e Corrimão", responsavel:"Vitor"},
-    {tarefa:"Parque Linear + Orquidário + Calçadão", responsavel:"Matheus"}
+    {tarefa:"Parque Linear + Orquidário + Calçadão", responsavel:"Ilderlânia"}
   ],
   2: [
     {tarefa:"Deck Gourmet + P.N.E", responsavel:"Vitor"},
-    {tarefa:"Brinquedoteca", responsavel:"Matheus"},
+    {tarefa:"Brinquedoteca", responsavel:"Ilderlânia"},
     {tarefa:"Salão de Festas", responsavel:"Bih"},
     {tarefa:"Banheiro M + P.N.E Clube", responsavel:"Bia"},
     {tarefa:"Banheiro F + P.N.E Clube", responsavel:"Bia"},
-    {tarefa:"Salão de Jogos", responsavel:"Matheus"},
-    {tarefa:"Academia", responsavel:"Matheus"},
+    {tarefa:"Salão de Jogos", responsavel:"Ilderlânia"},
+    {tarefa:"Academia", responsavel:"Ilderlânia"},
     {tarefa:"Portaria Delivery + Depósitos + Totens", responsavel:"Bih"},
     {tarefa:"Administração + Copa", responsavel:"Vitor"},
     {tarefa:"Banheiro Feminino", responsavel:"Bia"},
     {tarefa:"Banheiro Masculino + P.N.E", responsavel:"Bia"},
-    {tarefa:"Portaria + Pear + Sauna + Cajueiro", responsavel:"Matheus"},
+    {tarefa:"Portaria + Pear + Sauna + Cajueiro", responsavel:"Ilderlânia"},
     {tarefa:"Churrasqueira 1 + Quadra de Tênis", responsavel:"Vitor"},
-    {tarefa:"Churrasqueira 2 + Quadra Poliesportiva", responsavel:"Matheus"},
+    {tarefa:"Churrasqueira 2 + Quadra Poliesportiva", responsavel:"Ilderlânia"},
     {tarefa:"Espaço Zen + Rua Acalmada", responsavel:"Bih"},
     {tarefa:"Praça Área Esportiva (Playground, Academia ao Ar Livre, etc)", responsavel:"Bih"},
     {tarefa:"Mirante Completo - Escada + Vidros e Corrimão", responsavel:"Bia"},
@@ -181,24 +181,24 @@ const FIXAS = {
     {tarefa:"Deck Gourmet + P.N.E", responsavel:"Bia"},
     {tarefa:"Brinquedoteca", responsavel:"Bih"},
     {tarefa:"Salão de Festas", responsavel:"Vitor"},
-    {tarefa:"Banheiro M + P.N.E Clube", responsavel:"Matheus"},
-    {tarefa:"Banheiro F + P.N.E Clube", responsavel:"Matheus"},
+    {tarefa:"Banheiro M + P.N.E Clube", responsavel:"Ilderlânia"},
+    {tarefa:"Banheiro F + P.N.E Clube", responsavel:"Ilderlânia"},
     {tarefa:"Salão de Jogos", responsavel:"Bih"},
     {tarefa:"Academia", responsavel:"Bih"},
     {tarefa:"Portaria Delivery + Depósitos + Totens", responsavel:"Vitor"},
     {tarefa:"Administração + Copa", responsavel:"Bia"},
-    {tarefa:"Banheiro Feminino", responsavel:"Matheus"},
-    {tarefa:"Banheiro Masculino + P.N.E", responsavel:"Matheus"},
+    {tarefa:"Banheiro Feminino", responsavel:"Ilderlânia"},
+    {tarefa:"Banheiro Masculino + P.N.E", responsavel:"Ilderlânia"},
     {tarefa:"Portaria + Pear + Sauna + Cajueiro", responsavel:"Bih"},
     {tarefa:"Churrasqueira 1 + Quadra de Tênis", responsavel:"Bia"},
     {tarefa:"Churrasqueira 2 + Quadra Poliesportiva", responsavel:"Bih"},
     {tarefa:"Espaço Zen + Rua Acalmada", responsavel:"Vitor"},
     {tarefa:"Praça Área Esportiva (Playground, Academia ao Ar Livre, etc)", responsavel:"Vitor"},
-    {tarefa:"Mirante Completo - Escada + Vidros e Corrimão", responsavel:"Matheus"},
+    {tarefa:"Mirante Completo - Escada + Vidros e Corrimão", responsavel:"Ilderlânia"},
     {tarefa:"Parque Linear + Orquidário + Calçadão", responsavel:"Vitor"}
   ],
   4: [
-    {tarefa:"Deck Gourmet + P.N.E", responsavel:"Matheus"},
+    {tarefa:"Deck Gourmet + P.N.E", responsavel:"Ilderlânia"},
     {tarefa:"Brinquedoteca", responsavel:"Vitor"},
     {tarefa:"Salão de Festas", responsavel:"Bia"},
     {tarefa:"Banheiro M + P.N.E Clube", responsavel:"Bih"},
@@ -206,11 +206,11 @@ const FIXAS = {
     {tarefa:"Salão de Jogos", responsavel:"Vitor"},
     {tarefa:"Academia", responsavel:"Vitor"},
     {tarefa:"Portaria Delivery + Depósitos + Totens", responsavel:"Bia"},
-    {tarefa:"Administração + Copa", responsavel:"Matheus"},
+    {tarefa:"Administração + Copa", responsavel:"Ilderlânia"},
     {tarefa:"Banheiro Feminino", responsavel:"Bih"},
     {tarefa:"Banheiro Masculino + P.N.E", responsavel:"Bih"},
     {tarefa:"Portaria + Pear + Sauna + Cajueiro", responsavel:"Vitor"},
-    {tarefa:"Churrasqueira 1 + Quadra de Tênis", responsavel:"Matheus"},
+    {tarefa:"Churrasqueira 1 + Quadra de Tênis", responsavel:"Ilderlânia"},
     {tarefa:"Churrasqueira 2 + Quadra Poliesportiva", responsavel:"Vitor"},
     {tarefa:"Espaço Zen + Rua Acalmada", responsavel:"Bia"},
     {tarefa:"Praça Área Esportiva (Playground, Academia ao Ar Livre, etc)", responsavel:"Bia"},
